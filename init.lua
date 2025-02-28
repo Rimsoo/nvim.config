@@ -3,7 +3,6 @@ require("config.lazy")
 
 require("lspconfig").omnisharp.setup({
   cmd = { "dotnet", os.getenv("MASON") .. "/packages/omnisharp/libexec/OmniSharp.dll" },
-
   settings = {
     FormattingOptions = {
       -- Enables support for reading code style, naming convention and analyzer
