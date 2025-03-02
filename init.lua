@@ -1,6 +1,5 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-
 require("lspconfig").omnisharp.setup({
   cmd = { "dotnet", os.getenv("MASON") .. "/packages/omnisharp/libexec/OmniSharp.dll" },
   settings = {
