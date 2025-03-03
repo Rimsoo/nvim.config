@@ -3,11 +3,27 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     --{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
     opts = {
+      event_handlers = {
+        {
+          event = "neo_tree_window_after_open",
+          handler = function(args)
+            local outliner = require("outline")
+            outliner.open()
+          end,
+        },
+        {
+          event = "neo_tree_window_before_close",
+          handler = function(args)
+            local outliner = require("outline")
+            outliner.close()
+          end,
+        },
+      },
       sources = {
         "filesystem",
         "buffers",
         "git_status",
-        "document_symbols",
+        -- "document_symbols",
       },
       source_selector = {
         winbar = true,
@@ -15,7 +31,7 @@ return {
           { source = "filesystem" },
           { source = "buffers" },
           { source = "git_status" },
-          { source = "document_symbols" },
+          -- { source = "document_symbols" },
         },
       },
       filesystem = {
