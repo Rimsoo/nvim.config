@@ -1,6 +1,7 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    --{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
     opts = {
       sources = {
         "filesystem",
