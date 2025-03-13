@@ -146,7 +146,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, { "tsx", "typescript", }) end, },
+      vim.list_extend(opts.ensure_installed, { "tsx", "typescript" })
+    end,
+  },
 
   -- the opts function can also be used to change the default opts:
   {
