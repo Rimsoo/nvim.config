@@ -35,6 +35,7 @@ return {
         },
       },
       filesystem = {
+        use_libuv_file_watcher = vim.loop.os_uname().sysname ~= "Windows_NT",
         filtered_items = {
           visible = true,
           show_hidden_count = true,
