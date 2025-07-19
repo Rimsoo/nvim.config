@@ -69,5 +69,14 @@ return {
       command = "netcoredbg",
       args = { "--interpreter=vscode" },
     }
+
+    dap.adapters.coreclr = {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = "codelldb",
+        args = { "--port", "${port}" },
+      },
+    }
   end,
 }
